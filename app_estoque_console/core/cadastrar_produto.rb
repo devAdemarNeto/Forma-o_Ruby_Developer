@@ -1,4 +1,4 @@
-def cadastrar_produto(produto)
+def cadastrar_produto(produtos)
     mensagem("Iniciando casdastro de produtos", true,true, 1.5)
     mensagem_azul("Digite o nome do produto", false, false)
     nome = gets.chomp
@@ -17,11 +17,12 @@ def cadastrar_produto(produto)
     limpar_tela
 
     produtos << {
-        id: Timer.now.to_i
+        id: Time.now.to_i,
         nome: nome, 
         descricao: descricao,
         preco: preco,
         quantidade: quantidade_estoque 
     }
 
+    mensagem("O #{amarelo(nome)} foi cadastrado com sucesso !!", true, true, 3)
 end
